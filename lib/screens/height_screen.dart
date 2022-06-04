@@ -22,16 +22,16 @@ class _HeightPageState extends State<HeightPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.only(top: 59, left: 25, right: 25),
+        padding: const EdgeInsets.only(top: 59, left: 25, right: 25),
         child: Column(
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 BackGreyButton(),
-                Text(
+                const Text(
                   "Q/4",
-                  style: TextStyle(
+                  style: const TextStyle(
                       fontSize: 18,
                       fontFamily: "Kanit",
                       fontWeight: FontWeight.w400),
@@ -48,7 +48,7 @@ class _HeightPageState extends State<HeightPage> {
               "It”s okay no worries.we will fix it together later.",
               style: kregularTextStyle,
             ),
-            SizedBox(
+            const SizedBox(
               height: 43,
             ),
             Row(
@@ -64,7 +64,7 @@ class _HeightPageState extends State<HeightPage> {
                     });
                   },
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 20,
                 ),
                 ChoosingButton(
@@ -79,7 +79,7 @@ class _HeightPageState extends State<HeightPage> {
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 37,
             ),
             TextField(
@@ -92,14 +92,15 @@ class _HeightPageState extends State<HeightPage> {
               },
               decoration: InputDecoration(
                   hintText: 'Enter your current weight',
-                  hintStyle: TextStyle(
+                  hintStyle: const TextStyle(
                       color: Colors.grey, fontSize: 18, fontFamily: "Kanit"),
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(16.64),
-                      borderSide: BorderSide(width: 1, color: Colors.black))),
+                      borderSide:
+                          const BorderSide(width: 1, color: Colors.black))),
             ),
             Padding(
-                padding: EdgeInsets.only(top: 213),
+                padding: const EdgeInsets.only(top: 213),
                 child: GreenButton(
                     text: "Next",
                     onpressed: () async {

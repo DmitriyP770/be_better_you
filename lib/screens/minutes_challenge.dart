@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:be_better_you/widgets/buttons.dart';
 import 'package:provider/provider.dart';
 import 'package:be_better_you/widgets/buttons.dart';
+import 'video_screen.dart';
 
 class MinutesChallengeScreen extends StatelessWidget {
   const MinutesChallengeScreen({Key? key}) : super(key: key);
@@ -12,8 +13,7 @@ class MinutesChallengeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25),
+        child: SingleChildScrollView(
           child: Column(
             children: [
               Row(
@@ -35,13 +35,18 @@ class MinutesChallengeScreen extends StatelessWidget {
                 height: 40,
               ),
               Row(
+                mainAxisSize: MainAxisSize.min,
                 children: [
-                  ExerciseScreenButton(buttonText: "Watch Video", onTap: () {}),
+                  ExerciseScreenVideoButton(
+                    buttonText: "Watch Video",
+                    videoURL: plankVideoID,
+                  ),
                   SizedBox(
                     width: 18,
                   ),
-                  ExerciseScreenButton(
-                      buttonText: "Show Benefits", onTap: () {}),
+                  ExerciseScreenTextButton(
+                    textSource: kPlankText,
+                  ),
                 ],
               )
             ],

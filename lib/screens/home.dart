@@ -40,3 +40,12 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
+class HomeScreenBody extends StatelessWidget {
+  const HomeScreenBody({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}

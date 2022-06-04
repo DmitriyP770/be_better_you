@@ -44,7 +44,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             textBaseline: TextBaseline.ideographic,
             children: [
               Container(
-                margin: EdgeInsets.only(left: 76, bottom: 54),
+                margin: const EdgeInsets.only(left: 76, bottom: 54),
                 child: const Text(
                   "Already Have an Account?",
                   style: TextStyle(fontFamily: "Kanit", fontSize: 18),
@@ -72,5 +72,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         ],
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
   }
 }

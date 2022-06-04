@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:be_better_you/screens/const.dart';
+import 'package:be_better_you/screens/video_screen.dart';
+import 'package:be_better_you/screens/text_modal_bs_screen.dart';
 
 class GreenButton extends StatelessWidget {
   final String text;
@@ -64,7 +66,7 @@ class YellowButton extends StatelessWidget {
   final String text;
   VoidCallback onPressed;
   double? width = 364;
-  YellowButton({required this.text, required this.onPressed, this.width});
+  YellowButton({required this.text, required this.onPressed, this.width = 364});
 
   @override
   Widget build(BuildContext context) {
@@ -189,34 +191,68 @@ class EditGreyButton extends StatelessWidget {
   }
 }
 
-class ExerciseScreenButton extends StatelessWidget {
+class ExerciseScreenVideoButton extends StatelessWidget {
   final String buttonText;
-  VoidCallback onTap;
-  ExerciseScreenButton(
-      {Key? key, required this.buttonText, required this.onTap})
+  final String videoURL;
+  ExerciseScreenVideoButton(
+      {Key? key, required this.buttonText, required this.videoURL})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      child: Container(
-        width: 174,
-        height: 64,
-        decoration: BoxDecoration(
-            border: Border.all(),
-            borderRadius: BorderRadius.circular(16.64),
-            color: const Color(0xFFEDEEED)),
-        child: Center(
-          child: Text(
-            buttonText,
-            style: const TextStyle(
-              fontSize: 18,
-              fontFamily: "Kanit",
+        child: Container(
+          width: 174,
+          height: 64,
+          decoration: BoxDecoration(
+              border: Border.all(),
+              borderRadius: BorderRadius.circular(16.64),
+              color: const Color(0xFFEDEEED)),
+          child: Center(
+            child: Text(
+              buttonText,
+              style: const TextStyle(
+                fontSize: 18,
+                fontFamily: "Kanit",
+              ),
             ),
           ),
         ),
-      ),
-      onTap: onTap,
-    );
+        onTap: () {
+          showModalBottomSheet(
+              context: context, builder: (context) => VideoPage(plankVideoID));
+        });
+  }
+}
+
+class ExerciseScreenTextButton extends StatelessWidget {
+  final String textSource;
+  ExerciseScreenTextButton({required this.textSource});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+        child: Container(
+          width: 174,
+          height: 64,
+          decoration: BoxDecoration(
+              border: Border.all(),
+              borderRadius: BorderRadius.circular(16.64),
+              color: const Color(0xFFEDEEED)),
+          child: const Center(
+            child: Text(
+              "Show Benefits",
+              style: TextStyle(
+                fontSize: 18,
+                fontFamily: "Kanit",
+              ),
+            ),
+          ),
+        ),
+        onTap: () {
+          showModalBottomSheet(
+              context: context,
+              builder: (context) => TextModalBSScreen(textSource));
+        });
   }
 }

@@ -37,3 +37,7 @@ class FitAppMain extends StatelessWidget {
     );
   }
 }
+/*TODO: 1. Add chek is User found for scipping setup screens
+ TODO:  2. Complete all others challenge screens
+ TODO 3: Persistance
+*/

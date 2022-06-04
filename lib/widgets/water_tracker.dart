@@ -95,7 +95,7 @@ class _GlassState extends State<Glass> {
           setState(() {});
         } else {
           isActive = false;
-          model.undndrinkGlass();
+          model.undrinkGlass();
           setState(() {});
         }
       },
@@ -111,7 +111,7 @@ class WaterTrackerModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  void undndrinkGlass() {
+  void undrinkGlass() {
     _drinkedGlasses--;
     notifyListeners();
   }
